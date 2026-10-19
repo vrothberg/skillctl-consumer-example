@@ -1,7 +1,9 @@
 name: update-skills
 
 on:
-  pull_request_target:
+  push:
+    branches:
+      - renovate/**
     paths:
       - skillctl.yaml
 
@@ -11,12 +13,8 @@ permissions:
 jobs:
   update:
     runs-on: ubuntu-latest
-    if: github.actor == 'renovate[bot]'
     steps:
     - uses: actions/checkout@v7
-      with:
-        ref: ${{ github.head_ref }}
-        token: ${{ secrets.GITHUB_TOKEN }}
 
     - uses: actions/setup-go@v7
       with:
