@@ -30,10 +30,7 @@ jobs:
         go install github.com/vrothberg/skillctl/cmd/skillctl@latest
 
     - name: pull updated skills
-      run: |
-        for image in $(grep 'image:' skillctl.yaml | awk '{print $2}'); do
-          skillctl pull "$image"
-        done
+      run: skillctl update
 
     - name: commit updated skills
       run: |
