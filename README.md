@@ -18,6 +18,23 @@ $ skillctl pull --trust none quay.io/vrothberg/skillctl-example-skill:v1.0.0
 
 The example skill is published unsigned, so its manifest entry declares `trust: none`, an explicit opt-out of signature verification. Skills with a `trust: {key: ...}` entry are verified against that public key on every pull and update; see the [skillctl README](https://github.com/vrothberg/skillctl#trust-and-signature-verification).
 
+This repo also consumes a signed variant, `skillctl-example-signed-skill`. Its manifest entry pins the publisher's public key (`keys/skillctl-example-signed-skill.pub`), so every pull and update verifies the artifact's sigstore signature against that key before extracting it:
+
+```yaml
+- name: skillctl-example-signed-skill
+  image: quay.io/vrothberg/skillctl-example-signed-skill:v1.0.0
+  digest: sha256:...
+  extractPath: .agents/skills/skillctl-example-signed-skill
+  trust:
+      key: keys/skillctl-example-signed-skill.pub
+```
+
+To pull it into a new repo:
+
+```console
+$ skillctl pull --trust key=keys/skillctl-example-signed-skill.pub quay.io/vrothberg/skillctl-example-signed-skill:v1.0.0
+```
+
 ## Simulating an update
 
 In the [skillctl](https://github.com/vrothberg/skillctl) repo:

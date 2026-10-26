@@ -5,3 +5,9 @@ skills:
       digest: sha256:c696d5bb34aa30f6fc23e1f0a0aafd91c642d7d0341e42c2ac009cddc743619f
       extractPath: .agents/skills/skillctl-example-skill
       trust: none
+    - name: skillctl-example-signed-skill
+      image: quay.io/vrothberg/skillctl-example-signed-skill:v1.0.0
+      digest: sha256:5236890f5830881159d6143c4f676f74668a948f2698d6677c566700ce727bd0
+      extractPath: .agents/skills/skillctl-example-signed-skill
+      trust:
+        key: keys/skillctl-example-signed-skill.pub
