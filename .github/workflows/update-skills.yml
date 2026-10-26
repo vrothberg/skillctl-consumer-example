@@ -28,9 +28,10 @@ jobs:
     - name: install skillctl
       run: |
         go install github.com/vrothberg/skillctl/cmd/skillctl@latest
+        skillctl version
 
     - name: pull updated skills
-      run: skillctl update
+      run: skillctl update --force
 
     - name: commit updated skills
       run: |
