@@ -7,7 +7,7 @@ Example consumer repository demonstrating how [skillctl](https://github.com/vrot
 1. `skillctl.yaml` pins the example skill to a specific OCI tag and digest
 2. Renovate detects the OCI image reference and monitors for new tags
 3. When a new version is pushed to the registry, Renovate opens a PR to bump the tag
-4. CI runs `skillctl pull` to update the extracted skill files
+4. CI runs `skillctl update` to update the extracted skill files in `.agents/skills/`
 
 ## Setup
 
