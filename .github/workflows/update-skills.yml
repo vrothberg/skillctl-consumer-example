@@ -16,27 +16,4 @@ jobs:
     steps:
     - uses: actions/checkout@v7
 
-    - uses: actions/setup-go@v7
-      with:
-        go-version: '1.27'
-
-    - name: install skillctl
-      run: |
-        go install -tags "exclude_graphdriver_btrfs containers_image_openpgp" \
-            github.com/vrothberg/skillctl/cmd/skillctl@latest
-        skillctl version
-
-    - name: pull updated skills
-      run: skillctl update --force
-
-    - name: commit updated skills
-      run: |
-        git config user.name "github-actions[bot]"
-        git config user.email "github-actions[bot]@users.noreply.github.com"
-        git add .agents/skills/ skillctl.yaml
-        if git diff --cached --quiet; then
-          echo "No skill file changes to commit"
-        else
-          git commit -m "Update extracted skill files"
-          git push
-        fi
+    - uses: vrothberg/skillctl@main
