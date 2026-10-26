@@ -20,14 +20,10 @@ jobs:
       with:
         go-version: '1.27'
 
-    - name: install build deps
-      run: |
-        sudo apt-get -qq update
-        sudo apt-get -qq install libbtrfs-dev libgpgme-dev libdevmapper-dev
-
     - name: install skillctl
       run: |
-        go install github.com/vrothberg/skillctl/cmd/skillctl@latest
+        go install -tags "exclude_graphdriver_btrfs containers_image_openpgp" \
+            github.com/vrothberg/skillctl/cmd/skillctl@latest
         skillctl version
 
     - name: pull updated skills
