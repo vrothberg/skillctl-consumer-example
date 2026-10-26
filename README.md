@@ -13,8 +13,10 @@ Example consumer repository demonstrating how [skillctl](https://github.com/vrot
 
 ```console
 $ skillctl init
-$ skillctl pull quay.io/vrothberg/skillctl-example-skill:v1.0.0
+$ skillctl pull --trust none quay.io/vrothberg/skillctl-example-skill:v1.0.0
 ```
+
+The example skill is published unsigned, so its manifest entry declares `trust: none`, an explicit opt-out of signature verification. Skills with a `trust: {key: ...}` entry are verified against that public key on every pull and update; see the [skillctl README](https://github.com/vrothberg/skillctl#trust-and-signature-verification).
 
 ## Simulating an update
 

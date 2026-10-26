@@ -4,3 +4,4 @@ skills:
       image: quay.io/vrothberg/skillctl-example-skill:v1.0.0
       digest: sha256:c696d5bb34aa30f6fc23e1f0a0aafd91c642d7d0341e42c2ac009cddc743619f
       extractPath: .agents/skills/skillctl-example-skill
+      trust: none
