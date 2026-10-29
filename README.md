@@ -4,10 +4,12 @@ Example consumer repository demonstrating how [skillctl](https://github.com/vrot
 
 ## How it works
 
-1. `skillctl.yaml` pins the example skill to a specific OCI tag and digest
-2. Renovate detects the OCI image reference and monitors for new tags
-3. When a new version is pushed to the registry, Renovate opens a PR to bump the tag
-4. CI runs `skillctl update` to update the extracted skill files in `.agents/skills/`
+![A new skill version leads to a Renovate PR, CI updates the files, and project merge rules determine when it is merged.](docs/images/workflow.svg)
+
+`skillctl.yaml` pins each skill to an OCI tag and digest. Renovate proposes
+updates, and CI applies the declared trust policy and updates the extracted
+files. Inspect the changes, run automated checks, or combine both: your
+project decides when updates merge.
 
 ## Setup
 

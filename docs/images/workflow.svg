@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 0 1200 600" role="img" aria-labelledby="title description">
+  <title id="title">Skill updates through your existing workflow.</title>
+  <desc id="description">A new skill version is published to an OCI registry. Renovate opens a pull request. CI applies the declared trust policy and updates the extracted skill files. The project decides whether human review, automated checks, or both are required before merging.</desc>
+  <style>
+    text { font-family: "Trebuchet MS", "Segoe UI", sans-serif; fill: #333333; }
+    .headline { font-size: 33px; font-weight: 700; letter-spacing: -.6px; }
+    .label { font-size: 23px; font-weight: 700; }
+    .copy { font-size: 17px; fill: #64615b; }
+    .mono { font-family: "SFMono-Regular", Consolas, monospace; }
+    .outline { stroke: #333333; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .route { fill: none; stroke: #77716a; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+  <rect width="1200" height="600" rx="24" fill="#faf7ef"/>
+  <text x="50" y="63" class="headline">Skill updates through your existing workflow.</text>
+  <path d="M51 81 Q248 86 445 81" fill="none" stroke="#ddac4d" stroke-width="5" stroke-linecap="round"/>
+  <text x="50" y="119" class="copy">New instructions. Visible changes. Your project's rules.</text>
+
+  <!-- A new release becomes available in the registry. -->
+  <g transform="translate(54 210) rotate(-3 74 70)">
+    <path d="M0 28 L68 0 L146 28 L77 59 Z" fill="#f1d290" class="outline"/>
+    <path d="M0 28 L77 59 L78 146 L1 113 Z" fill="#e7b65e" class="outline"/>
+    <path d="M77 59 L146 28 L145 113 L78 146 Z" fill="#f5dfad" class="outline"/>
+    <path d="M34 14 L110 43 L110 76 L94 83 L94 51 L17 21" fill="#fff1cb" stroke="#333333" stroke-width="2.5" stroke-linejoin="round"/>
+    <g transform="rotate(-7 38 88)">
+      <rect x="13" y="69" width="49" height="36" rx="4" fill="#fffefa" stroke="#333333" stroke-width="2"/>
+      <text x="37" y="95" text-anchor="middle" class="mono" font-size="23" font-weight="700">v2</text>
+    </g>
+    <path d="M126 -5 L133 -18 M143 6 L158 -1 M149 22 L166 22" fill="none" class="outline"/>
+  </g>
+  <text x="127" y="400" text-anchor="middle" class="label">New version</text>
+  <text x="127" y="428" text-anchor="middle" class="copy">Published to your registry</text>
+  <path d="M210 286 Q233 272 255 286 M244 276 L257 286 L242 292" class="route"/>
+
+  <!-- The pull request exposes the actual skill changes. -->
+  <g transform="translate(271 203) rotate(2 85 78)">
+    <path d="M0 4 Q85 -1 171 2 L173 153 Q86 159 -2 154 Z" fill="#fffefa" class="outline"/>
+    <text x="13" y="30" font-size="14" font-weight="700">Update skill: v1 → v2</text>
+    <path d="M12 44 L159 44" stroke="#ddd6ca" stroke-width="1.5"/>
+    <text x="13" y="69" class="mono" font-size="15">SKILL.md</text>
+    <rect x="11" y="81" width="149" height="25" rx="3" fill="#f6e5df"/>
+    <rect x="11" y="114" width="149" height="25" rx="3" fill="#e0eee5"/>
+    <path d="M21 93 L29 93 M42 93 L136 93" stroke="#b66a55" stroke-width="3" stroke-linecap="round"/>
+    <path d="M21 126 L29 126 M25 122 L25 130 M42 126 L146 126" stroke="#2f7569" stroke-width="3" stroke-linecap="round"/>
+  </g>
+  <text x="357" y="400" text-anchor="middle" class="label">Renovate PR</text>
+  <text x="357" y="428" text-anchor="middle" class="copy">Proposes the update</text>
+  <path d="M454 286 Q477 273 499 286 M488 276 L501 286 L486 292" class="route"/>
+
+  <!-- CI updates files under the trust rules declared in the manifest. -->
+  <g transform="translate(515 217) rotate(-2 88 62)">
+    <path d="M0 3 Q87 0 175 3 L178 127 Q88 132 -1 128 Z" fill="#333333"/>
+    <circle cx="16" cy="19" r="3.5" fill="#e7b65e"/>
+    <circle cx="29" cy="19" r="3.5" fill="#aaa49a"/>
+    <circle cx="42" cy="19" r="3.5" fill="#aaa49a"/>
+    <text x="14" y="52" class="mono" font-size="14" style="fill:#fffefa">$ skillctl update</text>
+    <path d="M15 75 L21 81 L32 68 M15 104 L21 110 L32 97" fill="none" stroke="#8bc6ae" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="42" y="80" font-size="15" style="fill:#d7e8df">Trust policy</text>
+    <text x="42" y="109" font-size="15" style="fill:#d7e8df">Files updated</text>
+  </g>
+  <text x="603" y="400" text-anchor="middle" class="label">CI updates files</text>
+  <text x="603" y="428" text-anchor="middle" class="copy">Applies declared trust</text>
+  <path d="M705 286 Q726 273 747 286 M736 276 L749 286 L734 292" class="route"/>
+
+  <!-- These are project choices, not mandatory human approval. -->
+  <g transform="translate(762 205) rotate(2 91 78)">
+    <path d="M0 4 Q91 -1 182 2 L184 153 Q91 159 -2 154 Z" fill="#fffefa" class="outline"/>
+    <path d="M-1 4 Q90 -1 182 2 L183 36 L0 38 Z" fill="#f1d290"/>
+    <path d="M0 4 Q91 -1 182 2 L184 153 Q91 159 -2 154 Z" fill="none" class="outline"/>
+    <text x="91" y="27" text-anchor="middle" font-size="16" font-weight="700">Your merge rules</text>
+    <path d="M16 65 L22 71 L33 58 M16 100 L22 106 L33 93" fill="none" stroke="#2f7569" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="45" y="71" font-size="16">Review</text>
+    <text x="45" y="106" font-size="15">Automated checks</text>
+  </g>
+  <text x="853" y="400" text-anchor="middle" class="label">CI / CD</text>
+  <text x="853" y="428" text-anchor="middle" class="copy">You set the requirements</text>
+  <path d="M956 286 Q976 273 995 286 M984 276 L997 286 L982 292" class="route"/>
+
+  <!-- Merge can be performed by a person or automation. -->
+  <g transform="translate(1016 234)">
+    <path d="M52 0 C78 1 100 20 101 49 C103 79 80 101 51 101 C22 102 0 80 0 51 C-1 23 22 1 52 0 Z" fill="#e0eee5" class="outline"/>
+    <path d="M34 29 L34 72 M69 29 C69 52 34 45 34 68" fill="none" stroke="#2f7569" stroke-width="4" stroke-linecap="round"/>
+    <circle cx="34" cy="27" r="6" fill="#fffefa" stroke="#2f7569" stroke-width="3"/>
+    <circle cx="69" cy="27" r="6" fill="#fffefa" stroke="#2f7569" stroke-width="3"/>
+    <circle cx="34" cy="74" r="6" fill="#fffefa" stroke="#2f7569" stroke-width="3"/>
+  </g>
+  <text x="1067" y="400" text-anchor="middle" class="label">Merge</text>
+  <text x="1067" y="428" text-anchor="middle" class="copy">Ready for your agents</text>
+
+  <path d="M50 486 Q598 490 1150 486" fill="none" stroke="#e5dfd3" stroke-width="2" stroke-linecap="round"/>
+  <text x="50" y="531" font-size="21" font-weight="700">Inspect the changes, automate the checks, or combine both.</text>
+  <text x="50" y="561" class="copy">Skills become ordinary project updates, with a visible history of what changed.</text>
+</svg>
