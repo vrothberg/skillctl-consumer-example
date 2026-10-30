@@ -1,8 +1,8 @@
 apiVersion: v1
 skills:
     - name: skillctl-example-skill
-      image: quay.io/vrothberg/skillctl-example-skill:v1.0.0
-      digest: sha256:bd566ff239b249c98415e6f7a54053687db6a0f3b6af272fb39b6a410946d212
+      image: quay.io/vrothberg/skillctl-example-skill:v1.0.1
+      digest: sha256:426dafe8e7481a740f12cea6c8fb9e71deb2adbcffdf66f96ebfed347277a315
       extractPath: .agents/skills/skillctl-example-skill
       trust: none
     - name: skillctl-example-signed-skill
